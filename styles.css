@@ -4,32 +4,51 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    color: #0deb0a;
+    color: #000000;
     line-height: 1.6;
-    padding: 20px;
-    background: url("batman.jpg") no-repeat center center fixed;
+    background: url("neew.png") no-repeat center center fixed;
     background-size: cover;
 }
 
 .container {
-    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    max-width: 1400px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
     gap: 20px;
 }
 
+.main-content {
+    flex: 2;
+}
+
+.sidebar {
+    flex: 1;
+}
+
 .header {
-    grid-column: 1 / -1;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .profile-image {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 5px solid #00ff48;
     padding: 5px;
@@ -38,35 +57,39 @@ body {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     margin-bottom: 10px;
-    color: #9511ba;
+    color: #000000;
 }
 
 h2 {
-    font-size: 1.5rem;
-    color: #fff700;
+    font-size: clamp(1rem, 3vw, 2rem);
+    font-style: italic;
+    color:#595a04;
     margin-bottom: 20px;
 }
 
 .section {
-    background: rgba(255, 255, 255, 0.296);
+    background: rgba(255, 255, 255, 0.8);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .section h3 {
     color: #221af6;
     margin-bottom: 15px;
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
 }
 
 .skills-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .skill-item {
@@ -77,7 +100,7 @@ h2 {
 .skill-bar {
     flex-grow: 1;
     height: 10px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(255, 9, 9);
     border-radius: 5px;
     margin-left: 10px;
     overflow: hidden;
@@ -85,7 +108,7 @@ h2 {
 
 .skill-level {
     height: 100%;
-    background-color: #fcf800;
+    background-color: rgba(33, 255, 9, 0.797);
 }
 
 .social-icons {
@@ -95,39 +118,23 @@ h2 {
 }
 
 .social-icon {
-    color: #faf61a;
+    color: #060484;
     font-size: 28px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icon:hover {
-    color: #3aff13;
+    color: #0569ff;
     transform: scale(1.2);
 }
 
-/* Responsive Adjustments */
-
 @media (max-width: 1024px) {
-    .container {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    .content-wrapper {
+        flex-direction: column;
     }
-
-    .profile-image {
-        width: 150px;
-        height: 150px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.3rem;
-    }
-
-    .skills-list {
-        grid-template-columns: 1fr;
+    
+    .sidebar {
+        order: -1;
     }
 }
 
@@ -140,36 +147,11 @@ h2 {
         width: 120px;
         height: 120px;
     }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    h2 {
-        font-size: 1.1rem;
-    }
 }
 
 @media (max-width: 480px) {
     .container {
         padding: 5px;
-    }
-
-    .profile-image {
-        width: 100px;
-        height: 100px;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1rem;
-    }
-
-    .section h3 {
-        font-size: 1.3rem;
     }
 
     .skills-list {
