@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     whatsappLink.addEventListener('click', function(e) {
         e.preventDefault();
-        window.open('https://wa.me/081239908869', '_blank');
+        window.open('https://wa.me/(+62)81239908869', '_blank');
     });
 
     instagramLink.addEventListener('click', function(e) {
