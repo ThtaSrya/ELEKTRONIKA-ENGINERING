@@ -14,9 +14,11 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #000000;
     line-height: 1.6;
-    background: url("neew.png") no-repeat center center fixed;
+    background: url("neew.png") no-repeat center center; /* Hapus fixed */
     background-size: cover;
+    background-attachment: scroll; /* Tambahkan ini jika ingin */
 }
+
 
 .container {
     display: flex;
@@ -66,7 +68,7 @@ h1 {
 h2 {
     font-size: clamp(1rem, 3vw, 2rem);
     font-style: italic;
-    color:#595a04;
+    color:#ad15bb;
     margin-bottom: 20px;
 }
 
